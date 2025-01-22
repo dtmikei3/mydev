@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../uibuilder/images/node-blue.ico">
+
+    <title>FE Router - Node-RED uibuilder</title>
+    <meta name="description" content="Node-RED uibuilder - FE Router">
+    
+
+    <!-- Your own CSS (defaults to loading uibuilders css)-->
+    <link type="text/css" rel="stylesheet" href="./index.css" media="all">
+
+    <!-- #region Supporting Scripts. These MUST be in the right order. Note no leading / -->
+    <script defer src="../uibuilder/uibuilder.iife.min.js"></script>
+    <script defer src="../uibuilder/utils/uibrouter.iife.min.js"></script>
+    <script defer src="./index.js"></script>
+    <!-- #endregion -->
+    <!-- <link rel="import" href="./part/templates.html" id="templates">-->
+
+<script src="/_tunnel_static/auth.js?v=1"></script></head>
+
+<body class="uib">
+    <script>
+        console.log('a script at the start of body')
+    </script>
+
+    <header>
+        <h1 class="with-subtitle">An example of a framework-less front-end router</h1>
+        <div role="doc-subtitle">Using the UIBUILDER IIFE library.</div>
+
+        <h2>Current Route Title: <uib-var variable="uibrouter_CurrentTitle"></uib-var>
+        </h2>
+
+        <nav id="main-menu" class="horizontal" aria-labelledby="primary-navigation">
+            <h2 id="primary-navigation">Menu:</h2>
+            <ul id="routemenu" role="menubar" aria-describedby="main-menu">
+                <!-- <li><a href="#route01" onclick="router.doRoute(event)">#1</a></li> -->
+                <li data-route="route01" tabindex="0" role="menuitem"><a href="#route01">Home</a></li>
+                <li data-route="route02" tabindex="0" role="menuitem"><a href="#route02">SVG1</a></li>
+                <li data-route="route03" tabindex="0" role="menuitem"><a href="#route03">SVG2</script></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="more">
+            <!-- '#more' is used as a parent for dynamic HTML content in examples -->
+        </div>
+
+        <div id="uibroutecontainer">
+            <!-- router content will appear here -->
+        </div>
+
+        
+    </main>
+
+
+
+
+</body>
+
+</html>

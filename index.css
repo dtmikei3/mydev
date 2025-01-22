@@ -1,0 +1,110 @@
+/* Load defaults from `<userDir>/node_modules/node-red-contrib-uibuilder/front-end/uib-brand.css`
+ * This version auto-adjusts for light/dark browser settings but might not be as complete.
+ */
+@import url("../uibuilder/uib-brand.css");
+
+/* These variables build on existing variables in uib-brand.css
+ * They will be incorporated into that file in uibuilder v6.2
+ */
+:root {
+    --warning-intense: hsl(var(--warning-hue) 100% 50%);
+    --failure-intense: hsl(var(--failure-hue) 100% 50%);
+    --surface5: hsl(
+            /* additional background shade */
+            var(--brand-hue) calc(100% * var(--surfaces-saturation)) calc(100% * (var(--surfaces-lightness) - (var(--surfaces-factor) * .20) + (var(--surfaces-factor) * var(--surfaces-bias)))));
+}
+
+
+/* Bulb classes control look, colour and position */
+
+.bulb {
+    /* Default "off" class plus standard style */
+    z-index: 9999 !important;
+    /* Bulbs HAVE to be in the top z-layer */
+    cursor: pointer;
+    position: absolute;
+    /* allows exact positioning within the parent div */
+    transition: filter 2s ease-in-out 0s;
+    background-color: rgba(0, 0, 0, 0.001);
+    /* transparent background */
+    filter: url("#shadow");
+    /* selects the shadow filter */
+}
+
+.bulb path {
+    fill: grey;
+}
+
+.bulb-warn {
+    /* Standard "on" class */
+    filter: url('#glow');
+    /* selects the glow filter instead of shadow */
+}
+
+.bulb-warn path {
+    fill: var(--warning-intense);
+}
+
+.bulb-fail {
+    /* Alternative "on" class with different colour */
+    filter: url('#glow');
+}
+
+.bulb-fail path {
+    fill: var(--failure-intense);
+}
+
+/* Bulb position classes, change as needed
+ * Positions are relative to the parent floorplan div
+ */
+.posn1 {
+    top: 100px;
+    left: 100px;
+}
+
+.posn2 {
+    top: 120px;
+    left: 270px;
+}
+
+.posn3 {
+    top: 120px;
+    left: 650px;
+}
+
+.posn4 {
+    top: 270px;
+    left: 250px;
+}
+
+.posn5 {
+    top: 130px;
+    left: 820px;
+}
+
+.posn6 {
+    top: 130px;
+    left: 960px;
+}
+
+.posn7 {
+    top: 110px;
+    left: 1140px;
+}
+
+.posn8 {
+    top: 240px;
+    left: 1170px;
+}
+/* floorplan div class change anything
+ * except the position:relative.
+ * The background image location is relative
+ * to your uibuilder front-end files.
+ */
+.plan {
+    position: relative;
+    width: 99%;
+    height: 30rem;
+    background: url("part/background.svg") no-repeat;;
+    background-color: var(--surface5);
+}
