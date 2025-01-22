@@ -105,6 +105,6 @@
     position: relative;
     width: 99%;
     height: 30rem;
-    background: url("part/background.svg") no-repeat;;
+    background: url("part/background.svg") no-repeat;
     background-color: var(--surface5);
 }
